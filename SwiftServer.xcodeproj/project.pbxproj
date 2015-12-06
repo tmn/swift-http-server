@@ -43,7 +43,7 @@
 		22164FC61C136046002A3C24 = {
 			isa = PBXGroup;
 			children = (
-				22164FD11C136046002A3C24 /* SwiftServer */,
+				22164FD11C136046002A3C24 /* Sources */,
 				22164FD01C136046002A3C24 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,12 +56,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		22164FD11C136046002A3C24 /* SwiftServer */ = {
+		22164FD11C136046002A3C24 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				22164FD21C136046002A3C24 /* main.swift */,
 				22164FD91C136051002A3C24 /* Server.swift */,
 			);
+			name = Sources;
 			path = SwiftServer;
 			sourceTree = "<group>";
 		};
@@ -243,6 +244,7 @@
 				22164FD81C136046002A3C24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
