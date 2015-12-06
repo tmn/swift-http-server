@@ -4,9 +4,9 @@ class Server {
     var serverSocket: Int32 = 0
     var bufferSize = 1024
     
-    init() {
+    init(port: in_port_t = 8080) {
         serverSocket = socket(AF_INET, Int32(SOCK_STREAM), 0)
-        let port : in_port_t = 8080
+        setsockopt(serverSocket, SOL_SOCKET, SO_RCVBUF, &bufferSize, socklen_t(sizeof(Int)))
         
         var serverAddress: sockaddr_in = sockaddr_in(
             sin_len: __uint8_t(sizeof(sockaddr_in)),
@@ -15,8 +15,6 @@ class Server {
             sin_addr: in_addr(s_addr: inet_addr("0.0.0.0")),
             sin_zero: (0, 0, 0, 0, 0, 0, 0, 0)
         )
-        
-        setsockopt(serverSocket, SOL_SOCKET, SO_RCVBUF, &bufferSize, socklen_t(sizeof(Int)))
         
         if bind(serverSocket, getSockaddrPointer(&serverAddress), socklen_t(UInt8(sizeof(sockaddr_in)))) == -1 {
             exit(1)
