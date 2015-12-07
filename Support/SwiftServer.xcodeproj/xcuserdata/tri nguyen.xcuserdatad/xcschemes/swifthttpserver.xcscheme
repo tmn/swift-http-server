@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0710"
+   LastUpgradeVersion = "0720"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "22164FCE1C136046002A3C24"
-               BuildableName = "SwiftServer"
-               BlueprintName = "SwiftServer"
+               BlueprintIdentifier = "220362DA1C15FD4F00D679E4"
+               BuildableName = "swifthttpserver"
+               BlueprintName = "swifthttpserver"
                ReferencedContainer = "container:SwiftServer.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "22164FCE1C136046002A3C24"
-            BuildableName = "SwiftServer"
-            BlueprintName = "SwiftServer"
+            BlueprintIdentifier = "220362DA1C15FD4F00D679E4"
+            BuildableName = "swifthttpserver"
+            BlueprintName = "swifthttpserver"
             ReferencedContainer = "container:SwiftServer.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -55,9 +55,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "22164FCE1C136046002A3C24"
-            BuildableName = "SwiftServer"
-            BlueprintName = "SwiftServer"
+            BlueprintIdentifier = "220362DA1C15FD4F00D679E4"
+            BuildableName = "swifthttpserver"
+            BlueprintName = "swifthttpserver"
             ReferencedContainer = "container:SwiftServer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -74,9 +74,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "22164FCE1C136046002A3C24"
-            BuildableName = "SwiftServer"
-            BlueprintName = "SwiftServer"
+            BlueprintIdentifier = "220362DA1C15FD4F00D679E4"
+            BuildableName = "swifthttpserver"
+            BlueprintName = "swifthttpserver"
             ReferencedContainer = "container:SwiftServer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

@@ -6,44 +6,15 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		22164FD31C136046002A3C24 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22164FD21C136046002A3C24 /* main.swift */; };
-		22164FDA1C136051002A3C24 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22164FD91C136051002A3C24 /* Server.swift */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		22164FCD1C136046002A3C24 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		22164FCF1C136046002A3C24 /* SwiftServer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftServer; sourceTree = BUILT_PRODUCTS_DIR; };
-		22164FD21C136046002A3C24 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		22164FD91C136051002A3C24 /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		220362E41C15FDC200D679E4 /* SwiftServer */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SwiftServer; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		22164FCC1C136046002A3C24 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		22164FC61C136046002A3C24 = {
 			isa = PBXGroup;
 			children = (
-				22164FD11C136046002A3C24 /* Sources */,
+				220362E41C15FDC200D679E4 /* SwiftServer */,
 				22164FD01C136046002A3C24 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,55 +22,19 @@
 		22164FD01C136046002A3C24 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				22164FCF1C136046002A3C24 /* SwiftServer */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		22164FD11C136046002A3C24 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				22164FD21C136046002A3C24 /* main.swift */,
-				22164FD91C136051002A3C24 /* Server.swift */,
-			);
-			name = Sources;
-			path = SwiftServer;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		22164FCE1C136046002A3C24 /* SwiftServer */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 22164FD61C136046002A3C24 /* Build configuration list for PBXNativeTarget "SwiftServer" */;
-			buildPhases = (
-				22164FCB1C136046002A3C24 /* Sources */,
-				22164FCC1C136046002A3C24 /* Frameworks */,
-				22164FCD1C136046002A3C24 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SwiftServer;
-			productName = SwiftServer;
-			productReference = 22164FCF1C136046002A3C24 /* SwiftServer */;
-			productType = "com.apple.product-type.tool";
-		};
-/* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		22164FC71C136046002A3C24 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Tri Nguyen";
-				TargetAttributes = {
-					22164FCE1C136046002A3C24 = {
-						CreatedOnToolsVersion = 7.1.1;
-					};
-				};
 			};
 			buildConfigurationList = 22164FCA1C136046002A3C24 /* Build configuration list for PBXProject "SwiftServer" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -113,22 +48,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				22164FCE1C136046002A3C24 /* SwiftServer */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXSourcesBuildPhase section */
-		22164FCB1C136046002A3C24 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				22164FDA1C136051002A3C24 /* Server.swift in Sources */,
-				22164FD31C136046002A3C24 /* main.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
 		22164FD41C136046002A3C24 /* Debug */ = {
@@ -167,6 +89,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = ../.build/debug;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -205,23 +128,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = ../.build/debug;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-			};
-			name = Release;
-		};
-		22164FD71C136046002A3C24 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		22164FD81C136046002A3C24 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -233,15 +143,6 @@
 			buildConfigurations = (
 				22164FD41C136046002A3C24 /* Debug */,
 				22164FD51C136046002A3C24 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		22164FD61C136046002A3C24 /* Build configuration list for PBXNativeTarget "SwiftServer" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				22164FD71C136046002A3C24 /* Debug */,
-				22164FD81C136046002A3C24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
