@@ -49,10 +49,4 @@ public class Server {
             close(sockClient)
         }
     }
-    
-    func stop() {
-        
-    }
-    
-    
 }
