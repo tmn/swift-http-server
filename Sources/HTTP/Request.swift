@@ -18,7 +18,7 @@ class Request {
     init(socket: Socket) {
         sock = socket
         
-        let buffer: String = sock.bufferedLine()
+        let buffer: String = socket.bufferedLine()
         let bufferTokens: [String] = buffer.characters.split{ $0 == " " }.map(String.init)
         
         guard bufferTokens.count > 2 else {

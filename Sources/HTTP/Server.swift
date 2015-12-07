@@ -25,12 +25,10 @@ public class Server {
     
     public func start() {
         while (true) {
-            var sockAddr: sockaddr
-            
             #if os(Linux)
-            sockAddr = sockaddr()
+            var sockAddr: sockaddr = sockaddr()
             #else
-            sockAddr = sockaddr(sa_len: 0, sa_family: 0, sa_data: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0))
+            var sockAddr: sockaddr = sockaddr(sa_len: 0, sa_family: 0, sa_data: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0))
             #endif
             
             var sockLen: socklen_t = 0

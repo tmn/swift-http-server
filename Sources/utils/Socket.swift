@@ -14,12 +14,10 @@ public class Socket {
     }
     
     public func connect(port: in_port_t = 8080) {
-        var serverAddress: sockaddr_in?
-        
         #if os(Linux)
         sock = socket(AF_INET, Int32(SOCK_STREAM.rawValue), 0)
             
-        serverAddress = sockaddr_in(
+        var serverAddress: sockaddr_in = sockaddr_in(
             sin_family: sa_family_t(AF_INET),
             sin_port: htons(port),
             sin_addr: in_addr(s_addr: inet_addr("0.0.0.0")),
@@ -28,7 +26,7 @@ public class Socket {
         #else
         sock = socket(AF_INET, Int32(SOCK_STREAM), 0)
         
-        serverAddress = sockaddr_in(
+        var serverAddress: sockaddr_in = sockaddr_in(
             sin_len: __uint8_t(sizeof(sockaddr_in)),
             sin_family: sa_family_t(AF_INET),
             sin_port: htons(port),
