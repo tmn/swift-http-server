@@ -10,6 +10,6 @@ gpg --keyserver hkp://pool.sks-keyservers.net --refresh-keys Swift
 echo "=== download Swift"
 mkdir dev/
 cd dev/
-# wget https://swift.org/builds/ubuntu1404/swift-2.2-SNAPSHOT-2015-12-01-b/swift-2.2-SNAPSHOT-2015-12-01-b-ubuntu14.04.tar.gz
+wget https://swift.org/builds/ubuntu1404/swift-2.2-SNAPSHOT-2015-12-01-b/swift-2.2-SNAPSHOT-2015-12-01-b-ubuntu14.04.tar.gz
 tar xzf swift-2.2-SNAPSHOT-2015-12-01-b-ubuntu14.04.tar.gz
 echo 'export PATH=/home/vagrant/dev/swift-2.2-SNAPSHOT-2015-12-01-b-ubuntu14.04/usr/bin:"${PATH}"' >> /home/vagrant/.bashrc
