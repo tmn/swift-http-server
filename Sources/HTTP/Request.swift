@@ -18,7 +18,7 @@ extension HTTPMethod {
     }
 }
 
-class Request {
+public class Request {
     private var sock: Socket
     
     let method: String
