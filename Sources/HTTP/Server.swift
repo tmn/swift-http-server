@@ -38,12 +38,6 @@ public class Server {
             let request = Request(socket: Socket(serverSocket: sockClient))
             request.echo()
             
-            sendMessage(sockClient, message: "HTTP/1.1 200 OK\n")
-            sendMessage(sockClient, message: "Server: Swfit Web Server\n")
-            sendMessage(sockClient, message: "Content-Length: \("Hello Swift!".utf8.count)\n")
-            sendMessage(sockClient, message: "Content-Type: text-plain\n")
-            sendMessage(sockClient, message: "\r\n")
-            sendMessage(sockClient, message: "Hello Swift!")
             
             close(sockClient)
         }
