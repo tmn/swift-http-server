@@ -1,5 +1,6 @@
 import func libc.send
 import func libc.strlen
+import class utils.Socket
 
 public class Response {
     public init(_ path: String, _ headers: [String: String]) {
