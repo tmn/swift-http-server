@@ -32,8 +32,13 @@ public class Server {
             let sockClient = accept(serverSocket.sock, &sockAddr, &sockLen)
             
             let request = Request(socket: Socket(serverSocket: sockClient))
-            request.echo()
             
+            
+            var message = "Dette er en test: \(request.path)"
+            
+            request.response.sendHeader(sockClient, length: message.utf8.count)
+        
+            request.response.sendMessage(sockClient, message: "Dette er en test: \(request.path)")
             
             close(sockClient)
         }
