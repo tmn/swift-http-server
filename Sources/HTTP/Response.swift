@@ -2,6 +2,17 @@ import func libc.send
 import func libc.strlen
 import class utils.Socket
 
+public enum HTTPCode {
+    case Success
+    case Redirection
+    case ClientError
+    case ServerError
+}
+
+extension HTTPCode {
+    
+}
+
 public class Response {
     public init(_ path: String, _ headers: [String: String]) {
         
