@@ -21,11 +21,12 @@ extension HTTPMethod {
 public class Request {
     private var sock: Socket
     
-    let method: String
-    let path: String
-    var params: [(String, String)]!
-    var headers: [String: String]!
-    var body: String?
+    public var response: Response!
+    public let method: String
+    public let path: String
+    public var params: [(String, String)]!
+    public var headers: [String: String]!
+    public var body: String?
     
     init(socket: Socket) {
         sock = socket
