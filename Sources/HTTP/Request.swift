@@ -1,6 +1,22 @@
 import utils
 import func libc.exit
 
+public enum HTTPMethod: String {
+    case POST
+    case GET
+}
+
+extension HTTPMethod {
+    func req(path: String, _ headers: [String: String], _ body: String = "") -> Response {
+        switch self {
+        case .POST:
+            return Response(path, headers, body)
+            
+        case .GET:
+            return Response(path, headers)
+        }
+    }
+}
 
 class Request {
     private var sock: Socket
