@@ -1,10 +1,6 @@
-#if os(Linux)
-import Glibc
-#else
-import Darwin.C
-#endif
-
 import utils
+import func libc.exit
+
 
 class Request {
     private var sock: Socket

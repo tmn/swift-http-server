@@ -1,8 +1,4 @@
-#if os(Linux)
-import Glibc
-#else
-import Darwin.C
-#endif
+import libc
 
 public class Socket {
     public var sock: Int32

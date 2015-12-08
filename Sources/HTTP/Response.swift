@@ -1,8 +1,5 @@
-#if os(Linux)
-import Glibc
-#else
-import Darwin.C
-#endif
+import func libc.send
+import func libc.strlen
 
 public class Response {
     func sendMessage(socket: Int32, message: String) {

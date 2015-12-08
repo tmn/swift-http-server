@@ -1,10 +1,11 @@
-#if os(Linux)
-import Glibc
-#else
-import Darwin.C
-#endif
+import func libc.accept
+import func libc.close
+import func libc.send
+import func libc.strlen
+import struct libc.sockaddr
+import struct libc.socklen_t
 
-import utils
+import class utils.Socket
 
 public class Server {
     var serverSocket: Socket
