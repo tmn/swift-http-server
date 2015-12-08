@@ -19,10 +19,6 @@ public class Server {
     public func addRoute(route: String, _ callback: () -> Void) {
         routes[route] = callback
     }
-
-    func sendMessage(socket: Int32, message: String) {
-        send(socket,[UInt8](message.utf8), Int(strlen(message)), 0)
-    }
     
     public func start() {
         while (true) {
