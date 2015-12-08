@@ -2,6 +2,14 @@ import func libc.send
 import func libc.strlen
 
 public class Response {
+    public init(_ path: String, _ headers: [String: String]) {
+        
+    }
+    
+    public init(_ path: String, _ headers: [String: String], _ body: String) {
+        
+    }
+    
     func sendMessage(socket: Int32, message: String) {
         send(socket,[UInt8](message.utf8), Int(strlen(message)), 0)
     }
