@@ -46,6 +46,15 @@ public class Request {
         if let contentLength = headers["content-length"], let contentLengthValue: Int = Int(contentLength) {
             body = self.body(contentLengthValue)
         }
+        
+        if let httpMethod = HTTPMethod(rawValue: method) {
+            if let requestBody = body {
+                response = httpMethod.req(path, headers, requestBody)
+            }
+            else {
+                response = httpMethod.req(path, headers)
+            }
+        }
     }
     
     func echo() {
