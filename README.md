@@ -1,6 +1,23 @@
 AWesome piece of Swift
 
 
+## Example server
+
+```swift
+import HTTP
+import libc
+
+var server = Server()
+
+server.get("/") { req, res in
+    res.body = "This is root!"
+
+    return .Send(res)
+}
+
+server.start()
+```
+
 ## Building and running
 
 Build the project from within the project directory using `swift build`. Run the project using `./.build/debug/SwiftServer`
