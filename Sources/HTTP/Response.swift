@@ -14,23 +14,31 @@ extension HTTPCode {
 }
 
 public class Response {
-    public init(_ path: String, _ headers: [String: String]) {
+    var contentLength: Int = 0
+    var rawContent: String?
+    
+    public var body: String = "" {
+        didSet {
+            contentLength = body.utf8.count
+        }
+    }
+    
+    public init() {  }
+    
+    func echo() {
+        print("EHOC")
+    }
+    
+    public func headers() -> String {
+        var headers = [String]()
         
-    }
-    
-    public init(_ path: String, _ headers: [String: String], _ body: String) {
+        headers.append("HTTP/1.1 200 OK\n")
+        headers.append("Server: Swfit Web Server\n")
+        headers.append("Content-Length: \(contentLength)\n")
+        headers.append("Content-Type: text-plain\n")
+        headers.append("\r\n")
         
+        return headers.joinWithSeparator("")
     }
     
-    func sendMessage(socket: Int32, message: String) {
-        send(socket,[UInt8](message.utf8), Int(strlen(message)), 0)
-    }
-    
-    public func sendHeader(socket: Int32, length: Int) {
-        sendMessage(socket, message: "HTTP/1.1 200 OK\n")
-        sendMessage(socket, message: "Server: Swfit Web Server\n")
-        sendMessage(socket, message: "Content-Length: \(length)\n")
-        sendMessage(socket, message: "Content-Type: text-plain\n")
-        sendMessage(socket, message: "\r\n")
-    }
 }
