@@ -56,6 +56,13 @@ public class Server {
             close(sockClient)
         }
     }
+    
+    func sendMessage(socket: Int32, message: String) {
+        send(socket,[UInt8](message.utf8), Int(strlen(message)), 0)
+    }
+    
+    
+    
     public func post(path: String, _ handler: Handler) {
         router.addRoute(Route(method: HTTPMethod.POST, path: path, handler: handler))
     }
