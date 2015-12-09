@@ -56,4 +56,7 @@ public class Server {
             close(sockClient)
         }
     }
+    public func post(path: String, _ handler: Handler) {
+        router.addRoute(Route(method: HTTPMethod.POST, path: path, handler: handler))
+    }
 }
