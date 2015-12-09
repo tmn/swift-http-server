@@ -10,10 +10,12 @@ extension HTTPMethod {
     func req(path: String, _ headers: [String: String], _ body: String = "") -> Response {
         switch self {
         case .POST:
-            return Response(path, headers, body)
+            print("POST")
+            return Response()
             
         case .GET:
-            return Response(path, headers)
+            print("GET")
+            return Response()
         }
     }
 }
@@ -22,7 +24,7 @@ public class Request {
     private var sock: Socket
     
     public var response: Response!
-    public let method: String
+    public let method: HTTPMethod
     public let path: String
     public var params: [(String, String)]!
     public var headers: [String: String]!
@@ -38,7 +40,7 @@ public class Request {
             exit(1)
         }
         
-        method = bufferTokens[0].uppercaseString
+        method = HTTPMethod(rawValue: bufferTokens[0].uppercaseString)!
         path = bufferTokens[1]
         params = self.parseParams(path)
         headers = self.parseHeaders()
@@ -46,7 +48,7 @@ public class Request {
         if let contentLength = headers["content-length"], let contentLengthValue: Int = Int(contentLength) {
             body = self.body(contentLengthValue)
         }
-        
+        /*
         if let httpMethod = HTTPMethod(rawValue: method) {
             if let requestBody = body {
                 response = httpMethod.req(path, headers, requestBody)
@@ -55,6 +57,7 @@ public class Request {
                 response = httpMethod.req(path, headers)
             }
         }
+        */
     }
     
     func echo() {
