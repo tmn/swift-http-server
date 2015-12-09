@@ -59,4 +59,8 @@ public class Server {
     public func post(path: String, _ handler: Handler) {
         router.addRoute(Route(method: HTTPMethod.POST, path: path, handler: handler))
     }
+    
+    public func get(path: String, _ handler: Handler) {
+        router.addRoute(Route(method: HTTPMethod.GET, path: path, handler: handler))
+    }
 }
