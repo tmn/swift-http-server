@@ -23,6 +23,9 @@ extension Action {
 public class Server {
     var serverSocket: Socket
     var routes = [String: Any]()
+    var router = Router()
+    
+    public typealias Handler = (Request, Response) -> Action
     
     public init() {
         serverSocket = Socket(serverSocket: -1)
@@ -34,7 +37,7 @@ public class Server {
     }
     
     public func start() {
-        while (true) {
+        while true {
             #if os(Linux)
             var sockAddr: sockaddr = sockaddr()
             #else
@@ -42,18 +45,24 @@ public class Server {
             #endif
             
             var sockLen: socklen_t = 0
-            let sockClient = accept(serverSocket.sock, &sockAddr, &sockLen)
             
+            let sockClient = accept(serverSocket.sock, &sockAddr, &sockLen)
             let request = Request(socket: Socket(serverSocket: sockClient))
             
-            
-            var message = "Dette er en test: \(request.path)"
-            
-            request.response.sendHeader(sockClient, length: message.utf8.count)
-        
-            request.response.sendMessage(sockClient, message: "Dette er en test: \(request.path)")
+            handleRequest(sockClient, request: request)
             
             close(sockClient)
+        }
+    }
+    
+    private func handleRequest(socket: Int32, request: Request) {
+        print("Path: \(request.path), method: \(request.method)")
+        
+        if let route = router.findRoute(request.path, method: request.method) {
+            let res: Response = route.handler( ( request, Response() ) ).response()
+            
+            sendMessage(socket, message: res.headers())
+            sendMessage(socket, message: res.body)
         }
     }
     
