@@ -7,6 +7,19 @@ import struct libc.socklen_t
 
 import class utils.Socket
 
+public enum Action {
+    case Send(Response)
+}
+
+extension Action {
+    func response() -> Response {
+        switch self {
+        case .Send(let res):
+            return res
+        }
+    }
+}
+
 public class Server {
     var serverSocket: Socket
     var routes = [String: Any]()
